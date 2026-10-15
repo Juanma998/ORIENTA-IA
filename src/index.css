@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+:root {
+  --color-verde-bosque: #174A45;
+  --color-verde-bosque-hover: #205B53;
+  --color-verde-institucional: #2E7166;
+  --color-verde-salvia: #6FA99A;
+  --color-verde-niebla: #E4F2EC;
+  --color-verde-muy-claro: #F0F7F3;
+  --color-background: #F7F8F4;
+  --color-surface: #FFFFFF;
+  --color-text: #263D38;
+  --color-text-secondary: #52645D;
+  --color-border: #DDE5DF;
+  --color-warning-bg: #FFF3D8;
+  --color-warning-text: #805515;
+  --color-success-bg: #E4F2EC;
+  --color-success-text: #174A45;
+  --color-error-bg: #FCE8E6;
+  --color-error-text: #B3261E;
+}
+
+@theme {
+  --color-verde-bosque: #174A45;
+  --color-verde-bosque-hover: #205B53;
+  --color-verde-institucional: #2E7166;
+  --color-verde-salvia: #6FA99A;
+  --color-verde-niebla: #E4F2EC;
+  --color-verde-muy-claro: #F0F7F3;
+  --color-fondo: #F7F8F4;
+  --color-superficie: #FFFFFF;
+  --color-texto: #263D38;
+  --color-texto-secundario: #52645D;
+  --color-borde: #DDE5DF;
+  --color-ambar-bg: #FFF3D8;
+  --color-ambar-texto: #805515;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #F7F8F4;
+    color: #263D38;
+  }
+}
+
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-card {
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(1.5deg);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 3.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
